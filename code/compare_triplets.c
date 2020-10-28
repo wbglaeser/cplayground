@@ -45,7 +45,23 @@ char** split_string(char*);
  */
 int* compareTriplets(int a_count, int* a, int b_count, int* b, int* result_count) {
 
+    for (int i = 0; i < 3; i++) {
+        if (*(a+i) == *(b+i)) {
+          continue;
+        } else if (*(a+i) > *(b+i)) {
+          b_count -= 1;
+        } else {
+          a_count -= 1;
+        }
+    }
 
+    *result_count = 2;
+
+    static int result[2];
+    result[0] = a_count;
+    result[1] = b_count;
+
+    return result;
 }
 
 int main()
@@ -88,16 +104,16 @@ int main()
     int* result = compareTriplets(a_count, a, b_count, b, &result_count);
 
     for (int i = 0; i < result_count; i++) {
-        fprintf(fptr, "%d", *(result + i));
+        fprintf(stdout, "%d", *(result + i));
 
         if (i != result_count - 1) {
-            fprintf(fptr, " ");
+            fprintf(stdout, " ");
         }
     }
 
-    fprintf(fptr, "\n");
+    fprintf(stdout, "\n");
 
-    fclose(fptr);
+    fclose(stdout);
 
     return 0;
 }
