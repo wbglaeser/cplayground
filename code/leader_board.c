@@ -6,7 +6,6 @@ int top, stack[200002];
 int main() {
     // read n - the number of players on the leaderboard
     scanf("%d", &n);
-
     for (i = 0; i < n; ++i) {
         scanf("%d", &stack[top+1]);
         if (stack[top+1] != stack[top]) ++top;
