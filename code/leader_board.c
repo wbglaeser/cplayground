@@ -1,23 +1,14 @@
 #include <stdio.h>
 
-// variables needed throughout the code
 int i, n, m, score;
-
-// the stack is implemented using an array
-// and a variable storing the index of the top element
-// note: global variables are automatically intialized to 0,
-//       so top is 0 and the elements of the stack are 0
 int top, stack[200002];
 
 int main() {
     // read n - the number of players on the leaderboard
     scanf("%d", &n);
 
-
     for (i = 0; i < n; ++i) {
-
         scanf("%d", &stack[top+1]);
-
         if (stack[top+1] != stack[top]) ++top;
     }
 
