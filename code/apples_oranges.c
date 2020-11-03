@@ -34,7 +34,7 @@ int main() {
     for (int j; j < n; j++) {
         scanf("%d", &pos);
         if (b+pos >= s && b+pos <= t) {
-            apples_counter++;
+            oranges_counter++;
         }
     }
 
